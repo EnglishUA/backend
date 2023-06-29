@@ -1,4 +1,4 @@
-package com.english.ua.backend;
+package com.english.ua;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
