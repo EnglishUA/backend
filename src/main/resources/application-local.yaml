@@ -1,0 +1,19 @@
+spring:
+  flyway:
+    enabled: false
+    user: postgres
+    password: postgres
+    url: jdbc:postgresql://localhost:5432/english-ua
+  datasource:
+    username: postgres
+    password: postgres
+    url: jdbc:postgresql://localhost:5432/english-ua
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+  kafka:
+    bootstrap-servers: localhost:9092

@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: backend-service
+  flyway:
+    enabled: false
+    driver-class-name: org.postgresql.Driver
+  datasource:
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database: postgresql
+    hibernate:
+      ddl-auto: validate
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
