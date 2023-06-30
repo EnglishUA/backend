@@ -3,11 +3,11 @@ spring:
     enabled: false
     user: postgres
     password: postgres
-    url: jdbc:postgresql://localhost:5432/english-ua
+    url: jdbc:postgresql://database:5432/english-ua
   datasource:
     username: postgres
     password: postgres
-    url: jdbc:postgresql://localhost:5432/english-ua
+    url: jdbc:postgresql://database:5432/english-ua
   jpa:
     show-sql: true
     hibernate:
