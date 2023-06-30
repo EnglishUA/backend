@@ -1,0 +1,48 @@
+version: '3.8'
+name: 'english-ua'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Prebuilt.Dockerfile
+    container_name: english-ua-backend
+    ports:
+      - '8080:8080'
+    depends_on:
+      - database
+    links:
+      - 'database:database'
+    environment:
+      SPRING_PROFILES_ACTIVE: localDocker
+    networks:
+      - english-ua-network
+
+  database:
+    image: postgres
+    container_name:  english-ua-database
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_DB: english-ua
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - english-ua-database:/var/lib/postgresql/data
+    networks:
+      - english-ua-network
+
+#if "network english-ua-network declared as external, but could not be found"
+#start script "docker network create english-ua-network"
+networks:
+  english-ua-network:
+    external: true
+    driver: bridge
+    name: english-ua-network
+
+volumes:
+  #if "external volume "english-ua-database" not found"
+  #start script "docker volume create english-ua-database"
+  english-ua-database:
+    external: true
+    name: english-ua-database
