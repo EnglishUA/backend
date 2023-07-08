@@ -1,2 +1,4 @@
-package com.english.ua.dictionary.mapper;public class ContentMapper {
+package com.english.ua.dictionary.mapper;
+
+public interface ContentMapper {
 }

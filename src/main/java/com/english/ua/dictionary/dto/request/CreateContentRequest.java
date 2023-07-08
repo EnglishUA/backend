@@ -1,2 +1,4 @@
-package com.english.ua.dictionary.domain.request;public class CreateContent {
+package com.english.ua.dictionary.dto.request;
+
+public class CreateContentRequest {
 }

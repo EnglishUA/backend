@@ -1,2 +1,4 @@
-package com.english.ua.dictionary.domain.response;public class ContentResponse {
+package com.english.ua.dictionary.dto.response;
+
+public class ContentResponse {
 }

@@ -1,4 +1,4 @@
-package com.english.ua.repository.dictionary;
+package com.english.ua.dictionary.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -33,4 +33,6 @@ public class Dictionary {
         cascade = CascadeType.REMOVE)
     private Set<Content> contents;
 
+    @Column(unique = true)
+    private Long userId;
 }

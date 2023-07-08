@@ -1,4 +1,4 @@
-package com.english.ua.controller;
+package com.english.ua.dictionary.controller;
 
-public class Content {
+public class ContentController {
 }

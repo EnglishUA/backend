@@ -1,4 +1,4 @@
-package com.english.ua.repository.dictionary;
+package com.english.ua.dictionary.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
