@@ -3,11 +3,17 @@ spring:
     enabled: false
     user: postgres
     password: postgres
-    url: jdbc:postgresql://database:5432/english-ua
+    url: jdbc:postgresql://postgres:5432/english-ua
   datasource:
     username: postgres
     password: postgres
-    url: jdbc:postgresql://database:5432/english-ua
+    url: jdbc:postgresql://postgres:5432/english-ua
+  data:
+    mongodb:
+      host: mongo
+      port: 27017
+      username: root
+      password: root
   jpa:
     show-sql: true
     hibernate:
