@@ -61,7 +61,7 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        run: npm install -g semantic-release @semantic-release/gitlab @semantic-release/changelog @semantic-release/git @semantic-release/exec
+        run: npm install -g semantic-release @semantic-release/github @semantic-release/changelog @semantic-release/git @semantic-release/exec
 
       - name: Run Semantic Release
         run: npx semantic-release
