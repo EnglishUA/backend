@@ -6,6 +6,7 @@ import com.english.ua.article.service.ContentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -36,6 +37,7 @@ public class ContentServiceImpl implements ContentService {
         final var newContent = contentRepository.save(content.toBuilder().id(UUID.randomUUID().toString()).build());
         if (content.getParent() != null) {
             final var parentContent = findById(content.getParent().getId());
+            if (parentContent.getContents() == null) parentContent.setContents(new ArrayList<>());
             parentContent.getContents().add(newContent);
             contentRepository.save(parentContent);
         }

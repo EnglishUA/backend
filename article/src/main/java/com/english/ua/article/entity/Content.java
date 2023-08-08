@@ -12,10 +12,10 @@ import java.util.List;
 import java.util.Map;
 
 @Data
-@Document
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(toBuilder = true)
+@Document(collection = "contents")
 public class Content {
 
     @Id
