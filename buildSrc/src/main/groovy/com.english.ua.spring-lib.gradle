@@ -1,0 +1,12 @@
+plugins {
+    id 'com.english.ua.spring-base'
+    id 'org.springframework.boot' apply false
+}
+
+bootJar {
+    enabled = false
+}
+
+jar {
+    enabled = true
+}
