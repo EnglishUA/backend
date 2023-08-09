@@ -1,0 +1,27 @@
+spring:
+  flyway:
+    enabled: false
+    user: postgres
+    password: postgres
+    url: jdbc:postgresql://localhost:5432/english-ua
+    driver-class-name: org.postgresql.Driver
+  datasource:
+    username: postgres
+    password: postgres
+    url: jdbc:postgresql://localhost:5432/english-ua
+    driver-class-name: org.postgresql.Driver
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      username: root
+      password: root
+      database: english-ua
+      authentication-database: admin
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true

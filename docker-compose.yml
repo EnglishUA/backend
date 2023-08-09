@@ -10,17 +10,19 @@ services:
     ports:
       - '8080:8080'
     depends_on:
-      - database
+      - postgres
+      - mongo
     links:
-      - 'database:database'
+      - 'postgres:postgres'
+      - 'mongo:mongo'
     environment:
       SPRING_PROFILES_ACTIVE: localDocker
     networks:
       - english-ua-network
 
-  database:
+  postgres:
     image: postgres
-    container_name:  english-ua-database
+    container_name: english-ua-database
     ports:
       - '5432:5432'
     environment:
@@ -29,6 +31,20 @@ services:
       POSTGRES_PASSWORD: postgres
     volumes:
       - english-ua-database:/var/lib/postgresql/data
+    networks:
+      - english-ua-network
+
+  mongo:
+    image: mongo
+    container_name: english-ua-mongodb
+    ports:
+      - '27017:27017'
+    environment:
+      MONGO_INITDB_DATABASE: english-ua
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+    volumes:
+      - english-ua-mongodb:/data
     networks:
       - english-ua-network
 
@@ -46,3 +62,8 @@ volumes:
   english-ua-database:
     external: true
     name: english-ua-database
+  #if "external volume "english-ua-database" not found"
+  #start script "docker volume create english-ua-mongodb"
+  english-ua-mongodb:
+    external: true
+    name: english-ua-mongodb

@@ -1,0 +1,10 @@
+plugins {
+    id 'com.english.ua.spring-lib'
+}
+
+dependencies {
+    testImplementation 'org.testcontainers:postgresql'
+    testImplementation 'org.testcontainers:junit-jupiter'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.boot:spring-boot-testcontainers'
+}

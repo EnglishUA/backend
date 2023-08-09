@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: backend-service
+  flyway:
+    enabled: false
+    driver-class-name: org.postgresql.Driver
+    user: ${DB_USER}
+    password: ${DB_PASSWORD}
+    url: ${DB_URL}
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+    url: ${DB_URL}
+  data:
+    mongodb:
+      host: ${MONGO_HOST}
+      port: ${MONGO_PORT}
+      username: ${MONGO_USER}
+      password: ${MONGO_PASSWORD}
+      database: english-ua
+      authentication-database: admin
+  jpa:
+    database: postgresql
+    hibernate:
+      ddl-auto: validate
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
